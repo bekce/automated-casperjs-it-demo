@@ -120,24 +120,15 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>2.15</version>
-				<executions>
-					<execution>
-						<id>integration-tests</id>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-						<configuration>
-							<!-- Sets the VM argument line used when integration tests are run. -->
-							<argLine>${failsafeArgLine}</argLine>
-							<systemPropertyVariables>
-								<phantomjs.binary>${phantomjs.binary}</phantomjs.binary>
-								<phantomjs.executable>${phantomjs.binary}</phantomjs.executable>
-								<casperjs.executable>${project.build.directory}/casperjs/META-INF/resources/webjars/casperjs/1.1.1/bin/casperjs${casperjs.extension}</casperjs.executable>
-							</systemPropertyVariables>
-						</configuration>
-					</execution>
-				</executions>
+				<configuration>
+					<!-- Sets the VM argument line used when integration tests are run. -->
+					<argLine>${failsafeArgLine}</argLine>
+					<systemPropertyVariables>
+						<phantomjs.binary>${phantomjs.binary}</phantomjs.binary>
+						<phantomjs.executable>${phantomjs.binary}</phantomjs.executable>
+						<casperjs.executable>${project.build.directory}/casperjs/META-INF/resources/webjars/casperjs/1.1.1/bin/casperjs${casperjs.extension}</casperjs.executable>
+					</systemPropertyVariables>
+				</configuration>
 			</plugin>
 
 			<plugin>
