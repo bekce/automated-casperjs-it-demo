@@ -1,0 +1,16 @@
+<html>
+<head>Automated CasperJS Demo</head>
+<body>
+  <h2>This is an example page</h2>
+  <h3>Users</h3>
+  <table>
+    <tbody>
+      <tr th:each="row : ${rows}">
+        <td th:text="${row.name}"></td>
+        <td th:text="${row.surname}"></td>
+        <td th:text="${row.cellPhone}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
