@@ -11,6 +11,13 @@
 	<name>automated-casperjs-it-demo</name>
 	<description>Demo project for Spring Boot</description>
 
+	<contributors>
+		<contributor>
+			<name>Selim Eren Bekçe</name>
+			<url>http://sebworks.com</url>
+		</contributor>
+	</contributors>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

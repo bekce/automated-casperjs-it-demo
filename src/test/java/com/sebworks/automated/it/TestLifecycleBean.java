@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 import com.sebworks.automated.it.entity.User;
 import com.sebworks.automated.it.repository.UserRepository;
 
+/**
+ * @author Selim Eren Bekçe
+ */
 @Component
 public class TestLifecycleBean {
 

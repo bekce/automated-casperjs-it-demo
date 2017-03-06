@@ -9,6 +9,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sebworks.automated.it.repository.UserRepository;
 
+/**
+ * @author Selim Eren Bekçe
+ */
 @Controller
 public class HomeController {
 

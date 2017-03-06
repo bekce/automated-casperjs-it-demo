@@ -18,6 +18,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.github.raonifn.casperjs.junit.CasperEnvironment;
 import com.github.raonifn.casperjs.junit.CasperRunner;
 
+/**
+ * This is an integration test class (since its name ends with 'IT').
+ * It starts a Spring application context.
+ * 
+ * @author Selim Eren Bekçe
+ */
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
