@@ -1,12 +1,12 @@
-package com.sebworks;
+package com.sebworks.automated.it;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AutomatedCasperjsItDemoApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AutomatedCasperjsItDemoApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 }
