@@ -1,5 +1,4 @@
-# automated-casperjs-it-demo
-## Automated Headless UI and Integration Testing with CasperJS, Maven and Spring Boot
+# Automated Headless UI and Integration Testing with CasperJS, Maven and Spring Boot
 
 Automated Headless UI testing for a Java application is often painful to setup and perform correctly. It needs to be integrated in the build cycle, there may be multiple runtime dependencies and platform specific configuration, etc. In this post, I explain how we implemented platform-independent automated UI testing with CasperJS, Maven and Spring Boot.
 
