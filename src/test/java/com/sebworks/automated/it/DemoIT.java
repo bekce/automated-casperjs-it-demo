@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
+import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.ActiveProfiles;
@@ -19,11 +20,15 @@ import com.github.raonifn.casperjs.junit.CasperRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles("test")
-@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class DemoIT {
+	
+	@LocalServerPort
+	private int serverPort;
 
 	@Test
 	public void casperJS() throws Exception {
+		CasperIT.serverPort = this.serverPort;
 		CasperIT.countDownLatch();
 		JUnitCore.runClasses(CasperIT.class);
 	}
@@ -32,6 +37,7 @@ public class DemoIT {
 	public static class CasperIT {
 
 		private static final CountDownLatch latch = new CountDownLatch(1);
+		private static int serverPort;
 
 		/**
 		 * The latch must be counted down after server init.
@@ -51,7 +57,7 @@ public class DemoIT {
 		@CasperEnvironment
 		public Map<String, String> env() {
 			Map<String, String> map = new HashMap<>();
-			map.put("START_URL", "http://localhost:45000");
+			map.put("START_URL", "http://localhost:"+serverPort);
 			return map;
 		}
 	}
