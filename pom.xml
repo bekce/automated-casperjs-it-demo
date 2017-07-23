@@ -17,7 +17,7 @@
 			<url>http://sebworks.com</url>
 		</contributor>
 	</contributors>
-	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -58,10 +58,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Clone and install https://github.com/bekce/junit-casperjs for this dependency -->
 		<dependency>
 			<groupId>com.github.raonifn</groupId>
 			<artifactId>casperjs-junit</artifactId>
-			<version>0.4.1.1-SNAPSHOT</version>
+			<version>0.4.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -251,5 +252,17 @@
 			</build>
 		</profile>
 	</profiles>
+
+	<repositories>
+		<repository>
+		   <id>raonifn-repo</id>
+		   <name>Raonifn Maven Repository</name>
+		   <url>http://raonifn.github.com/repository/releases/</url>
+		   <layout>default</layout>
+		   <snapshots>
+		      <enabled>false</enabled>
+		   </snapshots>
+		</repository>
+	</repositories>
 
 </project>
