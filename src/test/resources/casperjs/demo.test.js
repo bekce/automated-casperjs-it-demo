@@ -1,4 +1,5 @@
 var sys = require('system');
+//var casper = require('casper');
 var url = sys.env.START_URL;
 var siteName = 'Demo';
 
@@ -8,12 +9,18 @@ if (!url) {
 
 var failures = [];
 
+casper.test.on("fail", function(failure) {
+  failures.push(failure);
+});
+
+// required in all test cases
+casper.test.on("exit", function() {
+  console.log("Exiting with status " + failures.length);
+  casper.exit(failures.length);
+});
+
 casper.test.begin('Demo CasperIT test', function suite(test) {
   casper.start();
-
-  casper.test.on("fail", function(failure) {
-    failures.push(failure);
-  });
 
   //basic tests to see if we can reach the site etc.
   casper.thenOpen(url + "/", function(response) {
@@ -24,7 +31,7 @@ casper.test.begin('Demo CasperIT test', function suite(test) {
   });
 
   casper.run(function() {
-    this.exit(failures.length);
+    test.done();
   });
 
 });
